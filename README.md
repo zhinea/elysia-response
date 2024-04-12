@@ -1,15 +1,29 @@
 # elysia-response
+In elysia itself, there is no `res` or `reply` built in to handle responses like in express, fastify, etc.
 
-To install dependencies:
+so I created this package to answer that problem. besides that, this package also supports compression such as brotli, gzip, and deflate.
 
+
+## Installing
+Choose your favorite package manager to install `elysia-response`
 ```bash
-bun install
+bun add elysia-response
+# or
+yarn add elysia-response
 ```
 
-To run:
+## Usage
 
-```bash
-bun run index.ts
+```ts
+import { ElysiaResponse, Config } from 'elysia-response';
+import Elysia from "elysia";
+
+new Elysia()
+    .use(ElysiaResponse<Config>({
+        // default options
+        enableCompression: true,
+        // available compressions are 'br', 'gzip', 'deflate'
+        compressions: ['gzip', 'deflate'],
+    }))
 ```
 
-This project was created using `bun init` in bun v1.1.1. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
