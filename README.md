@@ -25,5 +25,16 @@ new Elysia()
         // available compressions are 'br', 'gzip', 'deflate'
         compressions: ['gzip', 'deflate'],
     }))
+    .get("/", ({ res }) => {
+        return res.ok("Hello World");
+        // will return response with status code 200 and body "Hello World"
+    })
 ```
 
+## Available Methods
+
+| Methods    | Description                                 |
+|------------|---------------------------------------------|
+| `res.ok()` | return status code 200 |
+|            |                                             |
+|            |                                             |

@@ -2,6 +2,12 @@
   "name": "elysia-response",
   "module": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun start ./src/index.ts",
+    "dev": "bun dev ./src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./build",
+    "build:minify": "bun build ./src/index.ts --outdir ./build --minify --splitting"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
